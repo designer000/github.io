@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!-- <script src="js/jquery.datetimepicker.js"></script> -->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.datetimepicker.full.min.js"></script>
+
+	<script src="js/jquery.datetimepicker.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
+</head>
+<body>
+
+
+	<input id="datetimepicker" type="text" >
+    <!-- time -->
+	<input id="time" type="text" >
+
+<style>
+	input{
+		width: 100%;
+		text-align: center;
+		border: 1px solid gray;
+		padding: 15px;
+	}
+</style>
+
+<script>
+
+
+	
+
+
+$(document).ready(function($) {
+
+
+
+
+$('a').click(function(event) {
+	
+});
+
+
+var date = new Date();
+    date.setDate(date.getDate());
+
+
+jQuery('#datetimepicker').datetimepicker({
+		 timepicker:false,
+		 format:'d.m.Y',
+		 value: '',
+		 minDate:'-1970/01/01',//yesterday is minimum date(for today use 0 or -1970/01/01)
+		 defaultDate: true,
+
+ 		 value: date,
+
+		 defaultDate:'+1970/01/02',
+		 disabledWeekDays: [5,6],
+
+		 // onGenerate:function( ct ){
+	  //    jQuery(this).find('.xdsoft_date.xdsoft_weekend')
+	  //     .addClass('xdsoft_disabled');
+	  //    },
+
+	     // in case
+	     closeOnDateSelect:true,
+	     validateOnBlur:false
+
+
+	});
+
+
+// time
+
+// if($('#time').val() < $('#time').datetimepicker('current_time'))
+// {
+// 	alert('dsd');
+// }
+
+jQuery('#time').datetimepicker({
+		 datepicker:false,
+
+  		 format:'H:i',
+  		 minTime: '08:45',
+
+
+
+  		 maxTime: '18:00',
+  		 step: 1,
+
+
+  		 timepickerScrollbar: true,
+  		 value: 'current_time'
+  		 // 'disableTimeRanges': [['12pm', getCurrentTime(new Date())]]
+  		 // onSelectTime: function () {alert("fdf")}
+
+
+// onChangeDateTime: function () {  jQuery('#time').datetimepicker({minTime: 'current_time'});     }
+
+
+  		 
+  		 
+
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
